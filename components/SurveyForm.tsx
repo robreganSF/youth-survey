@@ -164,11 +164,27 @@ function SurveyForm() {
           <div className="flex items-center gap-4">
             <button
               type="submit"
-              className="w-[200px] bg-primary text-primary-foreground py-3 px-4 rounded-lg text-base font-bold hover:bg-secondary transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
+              className="w-[200px] bg-gray-500 text-white py-3 px-4 rounded-lg text-base font-bold hover:bg-gray-600 transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
             >
               Submit without Email
             </button>
-            <span className="text-lg font-bold text-foreground">Or</span>
+            <div className="flex items-center gap-2">
+              <span className="text-lg font-bold text-foreground">Or</span>
+              <svg 
+                className="w-5 h-5 text-primary" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
           </div>
 
           {/* Email Section - Full Width */}
@@ -177,7 +193,7 @@ function SurveyForm() {
               Learn how we plan to solve the umpire shortage and related sportsmanship issues and frustration?
             </label>
             <p className="text-base text-muted-foreground mb-4">
-              Share your email. We're a startup in stealth mode, but we're ready to reveal to the most passionate baseball and softball people.
+              Want to help shape the future of amateur baseball & softball? Share your email for Part 2 of the survey—plus exclusive updates on what we're building. We'll never spam or sell your info.
             </p>
             <div className="mb-4">
               <p className="text-lg font-bold text-foreground mb-2">Enter your email</p>
@@ -190,9 +206,6 @@ function SurveyForm() {
                 placeholder="your@email.com"
               />
             </div>
-            <p className="text-sm text-muted-foreground">
-              Want to help shape the future of amateur baseball & softball? Share your email for Part 2 of the survey—plus exclusive updates on what we're building. We'll never spam or sell your info.
-            </p>
           </div>
 
           <button
