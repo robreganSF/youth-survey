@@ -30,65 +30,125 @@ function SurveyForm() {
     setSubmitted(true);
   };
 
-  if (submitted) return <p className="text-center text-green-600 mt-10">✅ Thanks! Your response has been saved.</p>;
+  if (submitted) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+        <div className="bg-white p-8 rounded-lg shadow-md text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h2>
+          <p className="text-gray-600">Your response has been saved successfully.</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 space-y-4 bg-white rounded shadow">
-      <h2 className="text-xl font-semibold text-center">⚾ Youth Baseball Survey</h2>
+    <div className="min-h-screen bg-gray-50 py-12 px-4">
+      <div className="max-w-md mx-auto">
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">⚾ Youth Baseball Survey</h1>
+          <p className="text-gray-600">Help us understand the challenges in youth baseball officiating</p>
+        </div>
 
-      <label className="block">
-        Role:
-        <select name="role" value={formData.role} onChange={handleChange} required className="w-full p-2 border rounded">
-          <option value="">Select</option>
-          <option>Coach</option>
-          <option>Parent</option>
-          <option>Umpire</option>
-          <option>League Admin</option>
-          <option>Other</option>
-        </select>
-      </label>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              What is your role in youth baseball?
+            </label>
+            <select
+              name="role"
+              value={formData.role}
+              onChange={handleChange}
+              required
+              className="w-full p-2 border rounded-md"
+            >
+              <option value="">Select your role</option>
+              <option>Coach</option>
+              <option>Parent</option>
+              <option>Umpire</option>
+              <option>League Admin</option>
+              <option>Other</option>
+            </select>
+          </div>
 
-      <label className="block">
-        How often are strike-zone calls a problem?
-        <select name="strike_zone_issue_freq" value={formData.strike_zone_issue_freq} onChange={handleChange} required className="w-full p-2 border rounded">
-          <option value="">Select</option>
-          <option>Rarely</option>
-          <option>Occasionally</option>
-          <option>Often</option>
-          <option>Constantly</option>
-        </select>
-      </label>
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              How often are strike-zone calls a problem?
+            </label>
+            <select
+              name="strike_zone_issue_freq"
+              value={formData.strike_zone_issue_freq}
+              onChange={handleChange}
+              required
+              className="w-full p-2 border rounded-md"
+            >
+              <option value="">Select frequency</option>
+              <option>Rarely</option>
+              <option>Occasionally</option>
+              <option>Often</option>
+              <option>Constantly</option>
+            </select>
+          </div>
 
-      <label className="block">
-        How hard is it to find qualified umpires?
-        <select name="umpire_difficulty" value={formData.umpire_difficulty} onChange={handleChange} required className="w-full p-2 border rounded">
-          <option value="">Select</option>
-          <option>Not hard</option>
-          <option>Sometimes hard</option>
-          <option>Very hard</option>
-          <option>Near impossible</option>
-        </select>
-      </label>
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              How hard is it to find qualified umpires?
+            </label>
+            <select
+              name="umpire_difficulty"
+              value={formData.umpire_difficulty}
+              onChange={handleChange}
+              required
+              className="w-full p-2 border rounded-md"
+            >
+              <option value="">Select difficulty level</option>
+              <option>Not hard</option>
+              <option>Sometimes hard</option>
+              <option>Very hard</option>
+              <option>Near impossible</option>
+            </select>
+          </div>
 
-      <label className="block">
-        Would you pay for a consistent strike-zone tool?
-        <select name="would_pay" value={formData.would_pay} onChange={handleChange} required className="w-full p-2 border rounded">
-          <option value="">Select</option>
-          <option>Yes</option>
-          <option>Maybe</option>
-          <option>No</option>
-        </select>
-      </label>
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Would you pay for a consistent strike-zone tool?
+            </label>
+            <select
+              name="would_pay"
+              value={formData.would_pay}
+              onChange={handleChange}
+              required
+              className="w-full p-2 border rounded-md"
+            >
+              <option value="">Select an option</option>
+              <option>Yes</option>
+              <option>Maybe</option>
+              <option>No</option>
+            </select>
+          </div>
 
-      <label className="block">
-        Email (optional for follow-up):
-        <input type="email" name="email" value={formData.email} onChange={handleChange} className="w-full p-2 border rounded" />
-      </label>
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Email (optional for follow-up)
+            </label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full p-2 border rounded-md"
+              placeholder="your@email.com"
+            />
+          </div>
 
-      <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
-        Submit
-      </button>
-    </form>
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white py-3 px-4 rounded-md text-lg font-semibold hover:bg-blue-700"
+          >
+            Submit Survey
+          </button>
+        </form>
+      </div>
+    </div>
   );
 }
 
