@@ -54,8 +54,8 @@ function SurveyForm() {
     <div className="min-h-screen bg-background py-12 px-4">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-3xl font-bold text-foreground mb-4">⚾ Youth & Amateur Baseball and Fastpitch Softball Survey</h1>
-          <p className="text-lg font-medium text-muted-foreground">What's really happening with umpires in youth and amateur baseball? We want your take.</p>
+          <h1 className="text-3xl font-bold text-foreground mb-4">⚾ Amateur Baseball & Softball Officiating Survey</h1>
+          <p className="text-lg font-medium text-muted-foreground">From missed calls to missing umpires — tell us what you're seeing in the game today.</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-8">
