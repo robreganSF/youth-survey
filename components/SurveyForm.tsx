@@ -51,18 +51,18 @@ function SurveyForm() {
   }
 
   return (
-    <div className="min-h-screen bg-white py-12 px-4">
+    <div className="min-h-screen bg-background py-12 px-4">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-3xl font-bold text-[#1f2937] mb-4">⚾ Youth & Amateur Baseball and Fastpitch Softball Survey</h1>
-          <p className="text-lg font-medium text-gray-600">What's really happening with umpires in youth and amateur baseball? We want your take.</p>
+          <h1 className="text-3xl font-bold text-primary mb-4">⚾ Youth & Amateur Baseball and Fastpitch Softball Survey</h1>
+          <p className="text-lg font-medium text-muted-foreground">What's really happening with umpires in youth and amateur baseball? We want your take.</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-8">
           {/* Role and Strike Zone Issues - Group 1 */}
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-[#d1d5db]">
-              <label className="block text-lg font-bold text-[#1f2937] mb-4">
+            <div className="bg-card p-8 rounded-xl shadow-sm border border-border">
+              <label className="block text-lg font-bold text-primary mb-4">
                 1. Which best describes your role?
               </label>
               <select
@@ -70,7 +70,7 @@ function SurveyForm() {
                 value={formData.role}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border border-[#d1d5db] rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base text-[#1f2937]"
+                className="w-full p-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring text-base text-primary"
               >
                 <option value="">Select your role</option>
                 <option>Coach</option>
@@ -81,8 +81,8 @@ function SurveyForm() {
               </select>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-[#d1d5db]">
-              <label className="block text-lg font-bold text-[#1f2937] mb-4">
+            <div className="bg-card p-8 rounded-xl shadow-sm border border-border">
+              <label className="block text-lg font-bold text-primary mb-4">
                 2. How often are strike-zone calls a problem in your games?
               </label>
               <select
@@ -90,7 +90,7 @@ function SurveyForm() {
                 value={formData.strike_zone_issue_freq}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border border-[#d1d5db] rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base text-[#1f2937]"
+                className="w-full p-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring text-base text-primary"
               >
                 <option value="">Select frequency</option>
                 <option>Rarely</option>
@@ -103,8 +103,8 @@ function SurveyForm() {
 
           {/* Umpire Difficulty and Payment - Group 2 */}
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-[#d1d5db]">
-              <label className="block text-lg font-bold text-[#1f2937] mb-4">
+            <div className="bg-card p-8 rounded-xl shadow-sm border border-border">
+              <label className="block text-lg font-bold text-primary mb-4">
                 3. How hard is it to find enough qualified umpires?
               </label>
               <select
@@ -112,7 +112,7 @@ function SurveyForm() {
                 value={formData.umpire_difficulty}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border border-[#d1d5db] rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base text-[#1f2937]"
+                className="w-full p-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring text-base text-primary"
               >
                 <option value="">Select difficulty level</option>
                 <option>Not hard</option>
@@ -122,8 +122,8 @@ function SurveyForm() {
               </select>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-[#d1d5db]">
-              <label className="block text-lg font-bold text-[#1f2937] mb-4">
+            <div className="bg-card p-8 rounded-xl shadow-sm border border-border">
+              <label className="block text-lg font-bold text-primary mb-4">
                 4. Would you pay for a tool that ensures consistent, accurate strike-zone calls when umps are unavailable or inconsistent?
               </label>
               <select
@@ -131,7 +131,7 @@ function SurveyForm() {
                 value={formData.would_pay}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border border-[#d1d5db] rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base text-[#1f2937]"
+                className="w-full p-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring text-base text-primary"
               >
                 <option value="">Select an option</option>
                 <option>Yes</option>
@@ -142,31 +142,31 @@ function SurveyForm() {
           </div>
 
           {/* Story Section - Full Width */}
-          <div className="bg-white p-8 rounded-xl shadow-sm border border-[#d1d5db]">
-            <label className="block text-lg font-bold text-[#1f2937] mb-4">
+          <div className="bg-card p-8 rounded-xl shadow-sm border border-border">
+            <label className="block text-lg font-bold text-primary mb-4">
               5. Got a story?
             </label>
-            <p className="text-base text-gray-600 mb-4">
+            <p className="text-base text-muted-foreground mb-4">
               Tell us about a blown call, no-show ump, or moment that made you say: "there's got to be a better way."
             </p>
             <textarea
               name="story"
               value={formData.story}
               onChange={handleChange}
-              className="w-full p-3 border border-[#d1d5db] rounded-lg min-h-[120px] resize-y focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base text-[#1f2937]"
+              className="w-full p-3 border border-input rounded-lg min-h-[120px] resize-y focus:ring-2 focus:ring-ring focus:border-ring text-base text-primary"
               placeholder="Share your experience..."
             />
-            <p className="text-sm text-gray-500 mt-2 text-right">
+            <p className="text-sm text-muted-foreground mt-2 text-right">
               {charCount}/350 characters
             </p>
           </div>
 
           {/* Email Section - Full Width */}
-          <div className="bg-white p-8 rounded-xl shadow-sm border border-[#d1d5db]">
-            <label className="block text-lg font-bold text-[#1f2937] mb-4">
+          <div className="bg-card p-8 rounded-xl shadow-sm border border-border">
+            <label className="block text-lg font-bold text-primary mb-4">
               6. Want to learn how we plan to solve the umpire shortage and related sportsmanship issues and frustration?
             </label>
-            <p className="text-base text-gray-600 mb-4">
+            <p className="text-base text-muted-foreground mb-4">
               Share your email. We're a startup in stealth mode, but we're ready to reveal to the most passionate baseball and softball people.
             </p>
             <input
@@ -174,17 +174,17 @@ function SurveyForm() {
               name="subscribe_email"
               value={formData.subscribe_email}
               onChange={handleChange}
-              className="w-full p-3 border border-[#d1d5db] rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-base text-[#1f2937]"
+              className="w-full p-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring text-base text-primary"
               placeholder="your@email.com"
             />
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="text-sm text-muted-foreground mt-2">
               No spam — just 1 more survey and a monthly update if you're interested.
             </p>
           </div>
 
           <button
             type="submit"
-            className="w-full md:w-[300px] mx-auto block bg-[#1e3a8a] text-white py-4 px-6 rounded-lg text-lg font-bold hover:bg-[#3b82f6] transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
+            className="w-full md:w-[300px] mx-auto block bg-primary text-primary-foreground py-4 px-6 rounded-lg text-lg font-bold hover:bg-secondary transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
           >
             Count Me In
           </button>
