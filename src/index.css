@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
+    --background: 210 40% 98%;  /* Light blue background */
+    --foreground: 221 83% 33%;  /* Dark blue text */
+    --card: 0 0% 100%;  /* White cards */
+    --card-foreground: 221 83% 33%;  /* Dark blue text */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
-    --primary: 221 83% 33%;  /* #1e3a8a */
+    --popover-foreground: 221 83% 33%;
+    --primary: 221 83% 33%;  /* #1e3a8a - Dark blue */
     --primary-foreground: 0 0% 100%;
-    --secondary: 217 91% 60%;  /* #3b82f6 */
+    --secondary: 217 91% 60%;  /* #3b82f6 - Bright blue */
     --secondary-foreground: 0 0% 100%;
-    --muted: 220 13% 91%;  /* #d1d5db */
+    --muted: 210 40% 96.1%;  /* Light blue gray */
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 217 91% 60%;  /* #3b82f6 */
+    --accent: 217 91% 60%;  /* #3b82f6 - Bright blue */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 220 13% 91%;  /* #d1d5db */
-    --input: 220 13% 91%;  /* #d1d5db */
-    --ring: 221 83% 33%;  /* #1e3a8a */
+    --border: 214.3 31.8% 91.4%;  /* Light blue border */
+    --input: 214.3 31.8% 91.4%;  /* Light blue input border */
+    --ring: 217 91% 60%;  /* #3b82f6 - Bright blue */
     --radius: 0.5rem;
   }
  
