@@ -9,10 +9,18 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
   },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './'),
     },
   },
+  optimizeDeps: {
+    exclude: ['@rollup/rollup-linux-x64-gnu']
+  }
 })

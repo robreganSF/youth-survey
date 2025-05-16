@@ -2,6 +2,9 @@
   "name": "vite-survey-app",
   "version": "0.0.2",
   "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
