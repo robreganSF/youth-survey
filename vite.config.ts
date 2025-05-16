@@ -11,9 +11,12 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       output: {
-        manualChunks: undefined
+        manualChunks: undefined,
+        format: 'es'
       }
-    }
+    },
+    target: 'esnext',
+    minify: 'esbuild'
   },
   resolve: {
     alias: {
@@ -21,6 +24,9 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    exclude: ['@rollup/rollup-linux-x64-gnu']
+    exclude: ['@rollup/rollup-linux-x64-gnu'],
+    esbuildOptions: {
+      target: 'esnext'
+    }
   }
 })
