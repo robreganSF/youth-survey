@@ -51,7 +51,7 @@ function SurveyForm() {
   }
 
   return (
-    <div className="min-h-screen bg-white py-12 px-4 font-['Inter']">
+    <div className="min-h-screen bg-white py-12 px-4">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-3xl font-bold text-[#1f2937] mb-4">⚾ Youth & Amateur Baseball and Fastpitch Softball Survey</h1>
