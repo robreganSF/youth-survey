@@ -16,12 +16,21 @@ function SurveyForm() {
     umpire_difficulty: "",
     would_pay: "",
     email: "",
+    story: "",
+    subscribe_email: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [charCount, setCharCount] = useState(0);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    if (e.target.name === 'story') {
+      const newValue = e.target.value.slice(0, 350);
+      setCharCount(newValue.length);
+      setFormData({ ...formData, [e.target.name]: newValue });
+    } else {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -128,23 +137,48 @@ function SurveyForm() {
 
           <div className="bg-white p-6 rounded-lg shadow-md">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Email (optional for follow-up)
+              Got a story?
             </label>
+            <p className="text-sm text-gray-500 mb-4">
+              Tell us about a blown call, no-show ump, or moment that made you say: "there's got to be a better way."
+            </p>
+            <textarea
+              name="story"
+              value={formData.story}
+              onChange={handleChange}
+              className="w-full p-2 border rounded-md min-h-[120px] resize-y"
+              placeholder="Share your experience..."
+            />
+            <p className="text-sm text-gray-500 mt-2 text-right">
+              {charCount}/350 characters
+            </p>
+          </div>
+
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Want to learn how we plan to solve the umpire shortage and related sportsmanship issues and frustration?
+            </label>
+            <p className="text-sm text-gray-500 mb-4">
+              Share your email. We're a startup in stealth mode, but we're ready to reveal to the most passionate baseball and softball people.
+            </p>
             <input
               type="email"
-              name="email"
-              value={formData.email}
+              name="subscribe_email"
+              value={formData.subscribe_email}
               onChange={handleChange}
               className="w-full p-2 border rounded-md"
               placeholder="your@email.com"
             />
+            <p className="text-sm text-gray-500 mt-2">
+              No spam — just 1 more survey and a monthly update if you're interested.
+            </p>
           </div>
 
           <button
             type="submit"
             className="w-full bg-blue-600 text-white py-3 px-4 rounded-md text-lg font-semibold hover:bg-blue-700"
           >
-            Submit Survey
+            Subscribe
           </button>
         </form>
       </div>
