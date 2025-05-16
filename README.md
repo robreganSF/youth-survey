@@ -1,22 +1,29 @@
-# next-template
+# vite-survey-app
 
-A Next.js 13 template for building apps with Radix UI and Tailwind CSS.
+A Vite + React application with Radix UI and Tailwind CSS.
 
 ## Usage
 
 ```bash
-npx create-next-app -e https://github.com/shadcn/next-template
+# Clone the repository
+git clone https://github.com/yourusername/vite-survey-app.git
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
 ```
-Triggering redeploy
 
 ## Features
 
-- Next.js 13 App Directory
+- Vite for fast development and optimized builds
+- React with TypeScript
 - Radix UI Primitives
 - Tailwind CSS
 - Icons from [Lucide](https://lucide.dev)
-- Dark mode with `next-themes`
-- Tailwind CSS class sorting, merging and linting.
+- Tailwind CSS class sorting, merging and linting
+- Supabase integration
 
 ## License
 

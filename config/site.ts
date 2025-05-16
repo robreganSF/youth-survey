@@ -1,9 +1,9 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Next.js",
+  name: "Survey App",
   description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+    "Survey application built with Vite, React, Radix UI and Tailwind CSS.",
   mainNav: [
     {
       title: "Home",
@@ -11,8 +11,8 @@ export const siteConfig = {
     },
   ],
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/ui",
-    docs: "https://ui.shadcn.com",
+    twitter: "https://twitter.com/yourusername",
+    github: "https://github.com/yourusername/vite-survey-app",
+    docs: "https://github.com/yourusername/vite-survey-app#readme",
   },
 }
