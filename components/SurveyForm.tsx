@@ -144,7 +144,7 @@ function SurveyForm() {
           {/* Story Section - Full Width */}
           <div className="bg-card p-8 rounded-xl shadow-sm border border-border">
             <label className="block text-lg font-bold text-foreground mb-4">
-              5. Got a story?
+              5. Got a story? (Optional)
             </label>
             <p className="text-base text-muted-foreground mb-4">
               Tell us about a blown call, no-show ump, or moment that made you say: "there's got to be a better way."
@@ -159,6 +159,21 @@ function SurveyForm() {
             <p className="text-sm text-muted-foreground mt-2 text-right">
               {charCount}/350 characters
             </p>
+          </div>
+
+          <div className="flex flex-col items-center gap-4">
+            <button
+              type="submit"
+              className="w-full md:w-[300px] bg-primary text-primary-foreground py-4 px-6 rounded-lg text-lg font-bold hover:bg-secondary transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
+            >
+              Submit Survey
+            </button>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <span>or</span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
           </div>
 
           {/* Email Section - Full Width */}
@@ -178,7 +193,7 @@ function SurveyForm() {
               placeholder="your@email.com"
             />
             <p className="text-sm text-muted-foreground mt-2">
-              No spam — just 1 more survey and a monthly update if you're interested.
+              Want to help shape the future of amateur baseball & softball? Share your email for Part 2 of the survey—plus exclusive updates on what we're building. We'll never spam or sell your info.
             </p>
           </div>
 
