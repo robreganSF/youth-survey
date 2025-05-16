@@ -54,7 +54,7 @@ function SurveyForm() {
     <div className="min-h-screen bg-background py-12 px-4">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-3xl font-bold text-primary mb-4">⚾ Youth & Amateur Baseball and Fastpitch Softball Survey</h1>
+          <h1 className="text-3xl font-bold text-foreground mb-4">⚾ Youth & Amateur Baseball and Fastpitch Softball Survey</h1>
           <p className="text-lg font-medium text-muted-foreground">What's really happening with umpires in youth and amateur baseball? We want your take.</p>
         </div>
 
@@ -62,7 +62,7 @@ function SurveyForm() {
           {/* Role and Strike Zone Issues - Group 1 */}
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-card p-8 rounded-xl shadow-sm border border-border">
-              <label className="block text-lg font-bold text-primary mb-4">
+              <label className="block text-lg font-bold text-foreground mb-4">
                 1. Which best describes your role?
               </label>
               <select
@@ -70,7 +70,7 @@ function SurveyForm() {
                 value={formData.role}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring text-base text-primary"
+                className="w-full p-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring text-base text-foreground"
               >
                 <option value="">Select your role</option>
                 <option>Coach</option>
@@ -82,7 +82,7 @@ function SurveyForm() {
             </div>
 
             <div className="bg-card p-8 rounded-xl shadow-sm border border-border">
-              <label className="block text-lg font-bold text-primary mb-4">
+              <label className="block text-lg font-bold text-foreground mb-4">
                 2. How often are strike-zone calls a problem in your games?
               </label>
               <select
@@ -90,7 +90,7 @@ function SurveyForm() {
                 value={formData.strike_zone_issue_freq}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring text-base text-primary"
+                className="w-full p-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring text-base text-foreground"
               >
                 <option value="">Select frequency</option>
                 <option>Rarely</option>
@@ -104,7 +104,7 @@ function SurveyForm() {
           {/* Umpire Difficulty and Payment - Group 2 */}
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-card p-8 rounded-xl shadow-sm border border-border">
-              <label className="block text-lg font-bold text-primary mb-4">
+              <label className="block text-lg font-bold text-foreground mb-4">
                 3. How hard is it to find enough qualified umpires?
               </label>
               <select
@@ -112,7 +112,7 @@ function SurveyForm() {
                 value={formData.umpire_difficulty}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring text-base text-primary"
+                className="w-full p-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring text-base text-foreground"
               >
                 <option value="">Select difficulty level</option>
                 <option>Not hard</option>
@@ -123,7 +123,7 @@ function SurveyForm() {
             </div>
 
             <div className="bg-card p-8 rounded-xl shadow-sm border border-border">
-              <label className="block text-lg font-bold text-primary mb-4">
+              <label className="block text-lg font-bold text-foreground mb-4">
                 4. Would you pay for a tool that ensures consistent, accurate strike-zone calls when umps are unavailable or inconsistent?
               </label>
               <select
@@ -131,7 +131,7 @@ function SurveyForm() {
                 value={formData.would_pay}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring text-base text-primary"
+                className="w-full p-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring text-base text-foreground"
               >
                 <option value="">Select an option</option>
                 <option>Yes</option>
@@ -143,7 +143,7 @@ function SurveyForm() {
 
           {/* Story Section - Full Width */}
           <div className="bg-card p-8 rounded-xl shadow-sm border border-border">
-            <label className="block text-lg font-bold text-primary mb-4">
+            <label className="block text-lg font-bold text-foreground mb-4">
               5. Got a story?
             </label>
             <p className="text-base text-muted-foreground mb-4">
@@ -153,7 +153,7 @@ function SurveyForm() {
               name="story"
               value={formData.story}
               onChange={handleChange}
-              className="w-full p-3 border border-input rounded-lg min-h-[120px] resize-y focus:ring-2 focus:ring-ring focus:border-ring text-base text-primary"
+              className="w-full p-3 border border-input rounded-lg min-h-[120px] resize-y focus:ring-2 focus:ring-ring focus:border-ring text-base text-foreground"
               placeholder="Share your experience..."
             />
             <p className="text-sm text-muted-foreground mt-2 text-right">
@@ -163,7 +163,7 @@ function SurveyForm() {
 
           {/* Email Section - Full Width */}
           <div className="bg-card p-8 rounded-xl shadow-sm border border-border">
-            <label className="block text-lg font-bold text-primary mb-4">
+            <label className="block text-lg font-bold text-foreground mb-4">
               6. Want to learn how we plan to solve the umpire shortage and related sportsmanship issues and frustration?
             </label>
             <p className="text-base text-muted-foreground mb-4">
@@ -174,7 +174,7 @@ function SurveyForm() {
               name="subscribe_email"
               value={formData.subscribe_email}
               onChange={handleChange}
-              className="w-full p-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring text-base text-primary"
+              className="w-full p-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring text-base text-foreground"
               placeholder="your@email.com"
             />
             <p className="text-sm text-muted-foreground mt-2">
