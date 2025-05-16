@@ -17,7 +17,6 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       output: {
-        manualChunks: undefined,
         format: 'es'
       }
     },
@@ -32,7 +31,8 @@ export default defineConfig({
   optimizeDeps: {
     esbuildOptions: {
       target: 'esnext'
-    }
+    },
+    exclude: ['@rollup/rollup-linux-x64-gnu']
   },
   css: {
     postcss: {
