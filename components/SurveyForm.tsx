@@ -161,7 +161,7 @@ function SurveyForm() {
             </p>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center justify-center gap-4">
             <button
               type="submit"
               className="w-[200px] bg-gray-500 text-white py-3 px-4 rounded-lg text-base font-bold hover:bg-gray-600 transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
@@ -170,11 +170,8 @@ function SurveyForm() {
             </button>
             <div className="flex items-center gap-2">
               <span className="text-lg font-bold text-foreground">Or</span>
+              <i className="fas fa-arrow-down text-[#3b82f6] text-4xl"></i>
             </div>
-          </div>
-
-          <div className="flex justify-center -mt-2">
-            <i className="fas fa-arrow-down text-primary text-4xl"></i>
           </div>
 
           {/* Email Section - Full Width */}
