@@ -170,12 +170,11 @@ function SurveyForm() {
             </button>
             <div className="flex items-center gap-2">
               <span className="text-lg font-bold text-foreground">Or</span>
-              <i className="fas fa-arrow-down text-primary text-xl"></i>
             </div>
           </div>
 
-          <div className="flex justify-center">
-            <i className="fas fa-arrow-down text-primary text-xl"></i>
+          <div className="flex justify-center -mt-2">
+            <i className="fas fa-arrow-down text-primary text-4xl"></i>
           </div>
 
           {/* Email Section - Full Width */}
