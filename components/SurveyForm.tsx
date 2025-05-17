@@ -54,7 +54,7 @@ function SurveyForm() {
     <div className="min-h-screen bg-background py-12 px-4">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-3xl font-bold text-foreground mb-4">⚾ Amateur Baseball & Softball Officiating Survey</h1>
+          <h1 className="text-3xl font-bold text-foreground mb-4">⚾ Baseball & Softball Officiating Survey</h1>
           <p className="text-lg font-medium text-muted-foreground">From missed calls to missing umpires — tell us what you're seeing in the game today.</p>
         </div>
 
