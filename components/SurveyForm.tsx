@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
+import { useSearchParams } from 'next/navigation';
 
 // ⛳️ Replace these with your real values from Supabase API settings:
 const supabase = createClient(
@@ -10,6 +11,9 @@ const supabase = createClient(
 );
 
 function SurveyForm() {
+  const searchParams = useSearchParams();
+  const ref = searchParams.get('ref') || 'unknown';
+
   const [formData, setFormData] = useState({
     role: "",
     strike_zone_issue_freq: "",
@@ -18,6 +22,7 @@ function SurveyForm() {
     email: "",
     story: "",
     subscribe_email: "",
+    ref: ref,
   });
 
   const [submitted, setSubmitted] = useState(false);
