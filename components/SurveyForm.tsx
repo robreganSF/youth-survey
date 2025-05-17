@@ -21,15 +21,17 @@ function SurveyForm() {
     ref: "unknown",
   });
 
+  const [submitted, setSubmitted] = useState(false);
+  const [submittedWithoutEmail, setSubmittedWithoutEmail] = useState(false);
+  const [charCount, setCharCount] = useState(0);
+  const [lateEmail, setLateEmail] = useState("");
+
   useEffect(() => {
     // Get ref from URL parameters
     const params = new URLSearchParams(window.location.search);
     const ref = params.get('ref') || 'unknown';
     setFormData(prev => ({ ...prev, ref }));
   }, []);
-
-  const [submitted, setSubmitted] = useState(false);
-  const [charCount, setCharCount] = useState(0);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     if (e.target.name === 'story') {
@@ -47,12 +49,62 @@ function SurveyForm() {
     setSubmitted(true);
   };
 
+  const handleSubmitWithoutEmail = async (e: React.FormEvent) => {
+    e.preventDefault();
+    await supabase.from("survey_responses").insert([formData]);
+    setSubmittedWithoutEmail(true);
+  };
+
+  const handleLateEmailSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    await supabase.from("survey_responses").insert([{ ...formData, subscribe_email: lateEmail }]);
+    setSubmitted(true);
+  };
+
   if (submitted) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-        <div className="bg-white p-8 rounded-lg shadow-md text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h2>
-          <p className="text-gray-600">Your response has been saved successfully.</p>
+        <div className="bg-white p-8 rounded-lg shadow-md text-center max-w-lg">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">🎉 You're on the list!</h2>
+          <p className="text-gray-600 mb-6">Thanks for stepping up. Keep an eye out for an email from surveys@bigleagueballpark.com. No spam. Just one more deeper survey to hone in our upcoming solution. We also promise a BIG reveal within a few weeks on exactly what we are bringing to market. You will be the first to know.</p>
+          <div className="mt-8 pt-6 border-t border-gray-200">
+            <p className="text-gray-600 mb-2">Want to share this survey with anyone as passionate about the game as you?</p>
+            <a 
+              href="https://baseball-survey.vercel.app/ref=survey" 
+              className="text-primary hover:text-primary/80 transition-colors"
+            >
+              Share this link
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (submittedWithoutEmail) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+        <div className="bg-white p-8 rounded-lg shadow-md text-center max-w-lg">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Thank You!</h2>
+          <p className="text-gray-600 mb-6">Your answers help us understand the real problems around youth and amateur umpiring — and how to fix them.</p>
+          <p className="text-gray-600 mb-6">We're working on something new and revolutionary. If you're curious or want to stay in the loop, there's still time to join the early-access list by providing your email address. We are only collecting emails for one additional survey, and to announce our solution once it is ready. No spam, ever!</p>
+          
+          <form onSubmit={handleLateEmailSubmit} className="space-y-4">
+            <input
+              type="email"
+              value={lateEmail}
+              onChange={(e) => setLateEmail(e.target.value)}
+              className="w-full p-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring text-base text-foreground"
+              placeholder="your@email.com"
+              required
+            />
+            <button
+              type="submit"
+              className="w-full bg-primary text-primary-foreground py-3 px-6 rounded-lg text-lg font-bold hover:bg-secondary transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
+            >
+              Count Me In
+            </button>
+          </form>
         </div>
       </div>
     );
@@ -171,7 +223,8 @@ function SurveyForm() {
 
           <div className="flex items-center justify-center gap-4">
             <button
-              type="submit"
+              type="button"
+              onClick={handleSubmitWithoutEmail}
               className="w-[200px] bg-gray-500 text-white py-3 px-4 rounded-lg text-base font-bold hover:bg-gray-600 transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
             >
               Submit without Email
