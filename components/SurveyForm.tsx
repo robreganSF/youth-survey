@@ -221,49 +221,60 @@ function SurveyForm() {
             </p>
           </div>
 
-          <div className="flex items-center justify-center gap-4">
-            <button
-              type="button"
-              onClick={handleSubmitWithoutEmail}
-              className="text-sm text-gray-500 hover:text-gray-600 transition-colors"
-            >
-              Prefer to stay anonymous? You can still submit.
-            </button>
-            <div className="flex items-center gap-2">
-              <span className="text-lg font-bold text-foreground">Or</span>
-              <i className="fas fa-arrow-down text-[#3b82f6] text-4xl"></i>
+          {/* Submission Options Section */}
+          <div className="space-y-8">
+            <h2 className="text-2xl font-bold text-foreground text-center">Before you finish…</h2>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Option 1: Count Me In */}
+              <div className="bg-card p-8 rounded-xl shadow-sm border border-border flex flex-col">
+                <h3 className="text-xl font-bold text-foreground mb-4">
+                  Want to see what other coaches, parents & umpires are saying?
+                </h3>
+                <p className="text-base text-muted-foreground mb-6">
+                  Enter your email to get early access to full survey results — and be first to preview the solution we're building to restore fairness and reduce drama behind the plate.
+                </p>
+                <div className="space-y-4 mt-auto">
+                  <input
+                    type="email"
+                    name="subscribe_email"
+                    value={formData.subscribe_email}
+                    onChange={handleChange}
+                    className="w-full p-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring text-base text-foreground"
+                    placeholder="your@email.com"
+                  />
+                  <button
+                    type="submit"
+                    className="w-full bg-primary text-primary-foreground py-4 px-6 rounded-lg text-lg font-bold hover:bg-secondary transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
+                  >
+                    Count Me In
+                  </button>
+                  <p className="text-sm text-muted-foreground text-center">
+                    No spam. No selling. Just value for baseball people like you.
+                  </p>
+                </div>
+              </div>
+
+              {/* Option 2: Submit Without Email */}
+              <div className="bg-card p-8 rounded-xl shadow-sm border border-border flex flex-col">
+                <h3 className="text-xl font-bold text-foreground mb-4">
+                  Prefer to stay anonymous?
+                </h3>
+                <p className="text-base text-muted-foreground mb-6">
+                  You can still submit your answers without sharing your email.
+                </p>
+                <div className="mt-auto">
+                  <button
+                    type="button"
+                    onClick={handleSubmitWithoutEmail}
+                    className="w-full bg-gray-100 text-gray-700 py-4 px-6 rounded-lg text-lg font-bold hover:bg-gray-200 transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
+                  >
+                    Submit Without Email
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-
-          {/* Email Section - Full Width */}
-          <div className="bg-card p-8 rounded-xl shadow-sm border border-border">
-            <h3 className="text-xl font-bold text-foreground mb-4">
-              Want to see what other coaches, parents & umpires are saying?
-            </h3>
-            <p className="text-base text-muted-foreground mb-4">
-              Get early access to the full survey results — and be the first to preview the app we're building to bring fairness and sanity back to the strike zone.
-            </p>
-            <p className="text-base text-muted-foreground mb-6">
-              We'll never spam or sell your info. Just value for baseball people like you.
-            </p>
-            <div className="mb-4">
-              <input
-                type="email"
-                name="subscribe_email"
-                value={formData.subscribe_email}
-                onChange={handleChange}
-                className="w-full p-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring text-base text-foreground"
-                placeholder="your@email.com"
-              />
-            </div>
-          </div>
-
-          <button
-            type="submit"
-            className="w-full md:w-[300px] mx-auto block bg-primary text-primary-foreground py-4 px-6 rounded-lg text-lg font-bold hover:bg-secondary transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
-          >
-            Count Me In
-          </button>
         </form>
       </div>
     </div>
