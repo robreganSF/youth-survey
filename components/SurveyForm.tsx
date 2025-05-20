@@ -225,9 +225,9 @@ function SurveyForm() {
             <button
               type="button"
               onClick={handleSubmitWithoutEmail}
-              className="w-[200px] bg-gray-500 text-white py-3 px-4 rounded-lg text-base font-bold hover:bg-gray-600 transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
+              className="text-sm text-gray-500 hover:text-gray-600 transition-colors"
             >
-              Submit without Email
+              Prefer to stay anonymous? You can still submit.
             </button>
             <div className="flex items-center gap-2">
               <span className="text-lg font-bold text-foreground">Or</span>
@@ -237,14 +237,16 @@ function SurveyForm() {
 
           {/* Email Section - Full Width */}
           <div className="bg-card p-8 rounded-xl shadow-sm border border-border">
-            <label className="block text-lg font-bold text-foreground mb-4">
-              Learn how we plan to solve the umpire shortage and related sportsmanship issues and frustration?
-            </label>
+            <h3 className="text-xl font-bold text-foreground mb-4">
+              Want to see what other coaches, parents & umpires are saying?
+            </h3>
             <p className="text-base text-muted-foreground mb-4">
-              Want to help shape the future of amateur baseball & softball? Share your email for Part 2 of the survey—plus exclusive updates on what we're building. We'll never spam or sell your info.
+              Get early access to the full survey results — and be the first to preview the app we're building to bring fairness and sanity back to the strike zone.
+            </p>
+            <p className="text-base text-muted-foreground mb-6">
+              We'll never spam or sell your info. Just value for baseball people like you.
             </p>
             <div className="mb-4">
-              <p className="text-lg font-bold text-foreground mb-2">Enter your email</p>
               <input
                 type="email"
                 name="subscribe_email"
