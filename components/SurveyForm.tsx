@@ -274,7 +274,10 @@ function SurveyForm() {
                 <div className="mt-auto">
                   <button
                     type="submit"
-                    onClick={handleSubmitWithoutEmail}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleSubmitWithoutEmail(e);
+                    }}
                     className="w-full bg-primary text-primary-foreground py-4 px-6 rounded-lg text-lg font-bold hover:bg-secondary transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
                   >
                     Submit Without Email
