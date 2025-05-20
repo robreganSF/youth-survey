@@ -52,9 +52,10 @@ function SurveyForm() {
   const handleSubmitWithoutEmail = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Check if required questions are answered
-    if (!formData.role || !formData.strike_zone_issue_freq || !formData.umpire_difficulty || !formData.would_pay) {
-      alert("Please answer all required questions before submitting.");
+    // Use the form's built-in validation
+    const form = e.target as HTMLFormElement;
+    if (!form.checkValidity()) {
+      form.reportValidity();
       return;
     }
     
@@ -272,7 +273,7 @@ function SurveyForm() {
                 </p>
                 <div className="mt-auto">
                   <button
-                    type="button"
+                    type="submit"
                     onClick={handleSubmitWithoutEmail}
                     className="w-full bg-primary text-primary-foreground py-4 px-6 rounded-lg text-lg font-bold hover:bg-secondary transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
                   >
