@@ -51,6 +51,13 @@ function SurveyForm() {
 
   const handleSubmitWithoutEmail = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Check if required questions are answered
+    if (!formData.role || !formData.strike_zone_issue_freq || !formData.umpire_difficulty || !formData.would_pay) {
+      alert("Please answer all required questions before submitting.");
+      return;
+    }
+    
     await supabase.from("survey_responses").insert([formData]);
     setSubmittedWithoutEmail(true);
   };
