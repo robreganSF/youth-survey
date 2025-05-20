@@ -237,10 +237,10 @@ function SurveyForm() {
               {/* Option 1: Count Me In */}
               <div className="bg-card p-8 rounded-xl shadow-sm border border-border flex flex-col">
                 <h3 className="text-xl font-bold text-foreground mb-4">
-                  Want to see what other coaches, parents & umpires are saying?
+                  Want the Survey Results?
                 </h3>
                 <p className="text-base text-muted-foreground mb-6">
-                  Enter your email to get early access to full survey results — and be first to preview the solution we're building to restore fairness and reduce drama behind the plate.
+                  Enter your email and we'll send the results when they're ready — plus a peek at how we plan to fix the most common problems in amateur baseball.
                 </p>
                 <div className="space-y-4 mt-auto">
                   <input
