@@ -267,7 +267,7 @@ function SurveyForm() {
                   <button
                     type="button"
                     onClick={handleSubmitWithoutEmail}
-                    className="w-full bg-gray-100 text-gray-700 py-4 px-6 rounded-lg text-lg font-bold hover:bg-gray-200 transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
+                    className="w-full bg-primary text-primary-foreground py-4 px-6 rounded-lg text-lg font-bold hover:bg-secondary transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
                   >
                     Submit Without Email
                   </button>
