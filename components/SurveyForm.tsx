@@ -126,7 +126,7 @@ function SurveyForm() {
           <p className="text-lg font-medium text-muted-foreground">From missed calls to missing umpires — tell us what you're seeing in the game today.</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-8">
+        <form id="survey-form" onSubmit={handleSubmit} className="space-y-8">
           {/* Role and Strike Zone Issues - Group 1 */}
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-card p-8 rounded-xl shadow-sm border border-border">
@@ -274,10 +274,7 @@ function SurveyForm() {
                 <div className="mt-auto">
                   <button
                     type="submit"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleSubmitWithoutEmail(e);
-                    }}
+                    form="survey-form"
                     className="w-full bg-primary text-primary-foreground py-4 px-6 rounded-lg text-lg font-bold hover:bg-secondary transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
                   >
                     Submit Without Email
